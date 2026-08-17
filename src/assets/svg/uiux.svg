@@ -1,0 +1,7 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="3" opacity=".9"/>
+  <!-- Pen nib -->
+  <path d="M40 22 L26 46 L40 54 L54 46 Z" stroke="currentColor" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <circle cx="40" cy="40" r="3" fill="currentColor"/>
+  <path d="M40 40 V54" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+</svg>

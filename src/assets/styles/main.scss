@@ -1,0 +1,255 @@
+@import "components/_cards.scss";
+
+// ===================
+// _variables.scss
+// ===================
+
+// ----- Dark Mode -----
+$primary-color-dark: #667eea;
+$primary-light-dark: #764ba2;
+$primary-dark-dark: #4c63d2;
+
+$background-color-dark: #0a0a0a;
+$card-background-dark: #1a1a1a;
+$card-hover-dark: #2a2a2a;
+
+$text-color-dark: #ffffff;
+$text-muted-dark: #888888;
+$text-accent-dark: #cccccc;
+
+$border-color-dark: #333333;
+$shadow-color-dark: rgba(0, 0, 0, 0.5);
+
+// Gradient variabler
+$gradient-accent-dark: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$gradient-credentials-dark: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+$gradient-portfolio-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+$gradient-download-dark: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+$gradient-subtle-dark: linear-gradient(
+  135deg,
+  rgba(103, 126, 234, 0.12),
+  rgba(118, 75, 162, 0.06)
+);
+
+// Specifika kortfärger
+$credentials-bg-dark: linear-gradient(135deg, #2d5016 0%, #4a7c59 100%);
+$portfolio-bg-dark: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+$download-icon-bg-dark: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+$header-bg-dark: rgba(20, 20, 20, 0.9);
+$icon-bg-dark: #333333;
+
+// ----- Light Mode -----
+$primary-color-light: #667eea;
+$primary-light-light: #764ba2;
+$primary-dark-light: #4c63d2;
+
+$background-color-light: #f9fafb;
+$card-background-light: #ffffff;
+$card-hover-light: #f8f9fa;
+
+$text-color-light: #1f2937;
+$text-muted-light: #666666;
+$text-accent-light: #333333;
+
+$border-color-light: #e2e8f0;
+$shadow-color-light: rgba(0, 0, 0, 0.1);
+
+// Light mode gradienter
+$gradient-accent-light: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+$gradient-credentials-light: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+$gradient-portfolio-light: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+$gradient-download-light: linear-gradient(135deg, #f87171 0%, #dc2626 100%);
+$gradient-subtle-light: linear-gradient(
+  135deg,
+  rgba(103, 126, 234, 0.08),
+  rgba(118, 75, 162, 0.04)
+);
+
+$gradient-accent-light: linear-gradient(
+  135deg,
+  $primary-color-light,
+  $primary-light-light
+);
+$gradient-subtle-light: linear-gradient(
+  135deg,
+  rgba(37, 99, 235, 0.08),
+  rgba(59, 130, 246, 0.04)
+);
+
+// ===================
+// Mixin för teman
+// ===================
+@mixin theme($mode: dark) {
+  @if $mode == dark {
+    background-color: $background-color-dark;
+    color: $text-color-dark;
+  } @else if $mode == light {
+    background-color: $background-color-light;
+    color: $text-color-light;
+  }
+}
+.site-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+*,*::after,*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: $background-color-dark;
+  color: $text-color-dark;
+}
+.header {
+  background-color: $background-color-dark;
+}
+/* ======================
+   Card – base
+====================== */
+.card {
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  color: $text-color-dark;
+  background: radial-gradient(
+      600px circle at 0% 0%,
+      rgba(255, 255, 255, 0.06),
+      rgba(255, 255, 255, 0) 38%
+    ),
+    linear-gradient(180deg, #1a1a1a, #0e0e0e);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* ===== Card internal layout ===== */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  h4,
+  h6 {
+    margin: 0;
+  }
+}
+
+.card-img,
+.card-icon {
+  display: flex;
+  align-items: center;
+  // min-height: 100px;
+}
+
+/* Arrow */
+.enter-btn {
+  position: absolute;
+  right: 30px;
+  bottom: 26px;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.card:hover .enter-btn {
+  opacity: 1;
+}
+
+/* ======================
+   Card – icons
+====================== */
+
+.card-icon {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  // min-height: 100px;
+  margin-bottom: 20px;
+}
+
+.card-img {
+  display: flex;
+  align-items: center;
+  min-height: 100px;
+  margin-bottom: 1rem;
+}
+
+.cert-placeholder {
+  width: 100px;
+  height: 60px;
+  background: #fff;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.credentials-card .card-icon span {
+  font-style: italic;
+  font-size: 28px;
+  color: #fff;
+}
+/* ======================
+   Card – typography
+====================== */
+.card h6 {
+  color: #888;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.card h4 {
+  font-size: 20px;
+  font-weight: bold;
+  // margin-top: 20px;
+}
+
+.card h2 {
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.card p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-top: 15px;
+}
+
+.btn-primary {
+  background-color: $primary-color-dark;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: $primary-light-dark;
+}
+h6 {
+  opacity: 0.6;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+.panel {
+  background-color: $card-background-dark;
+}

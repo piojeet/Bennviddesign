@@ -1,0 +1,8 @@
+<svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="3" opacity=".9"/>
+  <!-- Rocket -->
+  <path d="M40 24c6 0 12 6 12 12 0 10-12 20-12 20S28 46 28 36c0-6 6-12 12-12Z"
+        stroke="currentColor" stroke-width="3" fill="none" stroke-linejoin="round"/>
+  <circle cx="44" cy="34" r="3" stroke="currentColor" stroke-width="3"/>
+  <path d="M40 56c-2 4-6 6-10 6M50 62c-4 0-8-2-10-6" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+</svg>
